@@ -7,9 +7,12 @@ public class Ejer3 {
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
 		
-		// Declaración de variables
+		// Nº de filas y columnas que introducirá el usuario
 		int filas;
 		int columnas;
+		
+		// Declaración del array
+		int[][] tabla;
 		
 		// Recogemos el número de filas y de columnas
 		System.out.print("Introduce el número de filas: ");
@@ -18,8 +21,9 @@ public class Ejer3 {
 		System.out.print("Introduce el número de columnas: ");
 		columnas = reader.nextInt();
 		
-		// Creamos un array bidimensional
-		int[][] tabla = new int[filas][columnas];
+		/* Array bidimensional con las filas
+		 * y columnas que introdujo el usuario */
+		tabla = new int[filas][columnas];
 		
 		// For para las filas
 		for (int j = 0; j < filas; j++) {
