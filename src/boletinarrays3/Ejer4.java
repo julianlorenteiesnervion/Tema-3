@@ -1,7 +1,5 @@
 package boletinarrays3;
 
-import java.util.Arrays;
-
 public class Ejer4 {
 
 	public static void main(String[] args) {
