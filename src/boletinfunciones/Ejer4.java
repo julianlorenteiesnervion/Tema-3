@@ -5,7 +5,13 @@ public class Ejer4 {
 		int found = -1;
 		int pos = 0;
 		
-		
+		while (t[pos] != clave || pos < t.length) {
+			pos++;
+			
+			if (t[pos] == clave) {
+				found = pos;
+			}
+		}
 		
 //		for (int value : t) {
 //			if (value == clave)
@@ -21,7 +27,7 @@ public class Ejer4 {
 	public static void main(String[] args) {
 		int[] table = new int[] {3, 4, 5, 6, 7};
 		
-		System.out.print(buscar(table, 6));
+		System.out.print(buscar(table, 2));
 	}
 
 }
