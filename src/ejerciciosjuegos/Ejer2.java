@@ -1,5 +1,6 @@
 package ejerciciosjuegos;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Ejer2 {
@@ -7,23 +8,29 @@ public class Ejer2 {
 	static int[] randomTable(int[] table) {
 		Random random = new Random();
 		
-		int[] pos = new int[table.length];
+		int pos1;
+		int pos2;
 		
-		// Generador de posiciones aleatorias
-		for (int i = 0; i < pos.length; i++) {
-			pos[i] = random.nextInt(0, table.length);
+		int aux;
+		
+		for (int i = 0; i < table.length; i++) {
+			pos1 = random.nextInt(0, table.length);
+			pos2 = random.nextInt(0, table.length);
 			
-			for (int j = 0; j < pos.length; j++) {
-				if (pos[i] ==)
-			}
+			aux = table[pos2];
+			table[pos1] = table[pos2];
+			table[pos2] = aux;
 		}
-		
 		
 		return table;
 	}
 
 	public static void main(String[] args) {
-
+		int[] table = new int[] {1, 2, 3};
+		
+		randomTable(table);
+		
+		System.out.print(Arrays.toString(table));
 	}
 
 }
