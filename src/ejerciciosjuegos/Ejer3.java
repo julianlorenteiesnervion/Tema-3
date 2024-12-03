@@ -14,7 +14,13 @@ public class Ejer3 {
 		 * una vez hayamos desordenado la tabla, comprobemos si la tabla
 		 * modificada es igual a la original para que en caso de que sí
 		 * que sean iguales se vuelva a repetir el for que desordena la tabla */
-		int[][] originalTable = Arrays.copyOf(table, table.length);
+int[][] originalTable = new int [table.length][table[0].length];
+		
+		for (int j = 0; j < table.length; j++) {
+			for (int i = 0; i < table.length; i++) {
+				originalTable[j][i] = table[j][i];
+			}
+		}
 		
 		// Variables para generar dos posiciones aleatorias en ellas por cada vuelta
 		int pos1;
