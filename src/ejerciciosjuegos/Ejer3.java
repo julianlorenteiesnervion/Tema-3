@@ -14,7 +14,7 @@ public class Ejer3 {
 		 * una vez hayamos desordenado la tabla, comprobemos si la tabla
 		 * modificada es igual a la original para que en caso de que sí
 		 * que sean iguales se vuelva a repetir el for que desordena la tabla */
-int[][] originalTable = new int [table.length][table[0].length];
+		int[][] originalTable = new int [table.length][table[0].length];
 		
 		for (int j = 0; j < table.length; j++) {
 			for (int i = 0; i < table.length; i++) {
@@ -22,27 +22,27 @@ int[][] originalTable = new int [table.length][table[0].length];
 			}
 		}
 		
-		// Variables para generar dos posiciones aleatorias en ellas por cada vuelta
+		// Variable auxiliar para guardar en ella el valor de la otra posición
+		int aux;
+		
+		// Variables para la posición aleatoria
 		int pos1;
 		int pos2;
-		
-		// Variable auxiliar para guardar en ella el valor de la segunda posición
-		int aux;
 		
 		// Do-while para que la tabla se desordene siempre
 		do {
 			// For para desordenar la tabla
-			for (int i = 0; i < table.length; i++) {
-				// Generamos las posiciones aleatorias
-				pos1 = random.nextInt(0, table.length);
-				pos2 = random.nextInt(0, table.length);
-				
-				// Nos guardamos el valor de la pos2 en la variable auxiliar
-				aux = table[pos2][pos1];
-				
-				// Hacemos el intercambio de valores
-				table[pos2][pos1] = table[pos1][pos2];
-				table[pos1][pos2] = aux;
+			for (int j = 0; j < table.length; j++) {
+				for (int i = 0; i < table[j].length; i++) {
+					// Posición aleatoria (fila y columna)
+					pos1 = random.nextInt(0, table.length);
+					pos2 = random.nextInt(0, table[j].length);
+					
+					// Intercambio de valores
+					aux = table[j][i];
+					table[j][i] = table[pos1][pos2];
+					table[pos1][pos2] = aux;
+				}
 			}
 		} while (Arrays.equals(table, originalTable));
 		
